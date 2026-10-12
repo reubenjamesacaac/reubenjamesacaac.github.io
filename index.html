@@ -1,181 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #000000;
-      --fg: #ffffff;
-      --muted: #9ca3af;
-      --accent: linear-gradient(120deg, #ffffff, #9ca3af, #ffffff);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', system-ui, sans-serif;
-    }
-
-    body {
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,0.06), transparent 40%),
-        radial-gradient(circle at bottom, rgba(255,255,255,0.04), transparent 50%),
-        var(--bg);
-      color: var(--fg);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 45%, rgba(255,255,255,0.04) 50%, transparent 55%);
-      animation: sweep 14s linear infinite;
-      pointer-events: none;
-    }
-
-    @keyframes sweep {
-      from { transform: translateX(-30%); }
-      to { transform: translateX(30%); }
-    }
-
-    main {
-      max-width: 900px;
-      width: 100%;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 600;
-      letter-spacing: -0.04em;
-      background: var(--accent);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 6s linear infinite;
-      margin-bottom: 3rem;
-    }
-
-    @keyframes shimmer {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-
-    .profiles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 3rem;
-    }
-
-    .card {
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 24px;
-      padding: 3rem 2rem;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.4s ease, border-color 0.4s ease;
-      backdrop-filter: blur(6px);
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255,255,255,0.4);
-    }
-
-    .avatar {
-      width: 140px;
-      height: 140px;
-      margin: 0 auto 3rem;
-      position: relative;
-      display: grid;
-      place-items: center;
-    }
-
-    .avatar .frame {
-      width: 100%;
-      height: 100%;
-      clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
-      background: linear-gradient(135deg, #ffffff, #9ca3af);
-      padding: 2px;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      clip-path: inherit;
-      filter: grayscale(100%) contrast(1.1);
-      background: #000;
-    }
-
-    .avatar::after {
-      content: "";
-      position: absolute;
-      inset: -18px;
-      clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
-      border: 1px dashed rgba(255,255,255,0.1);
-      animation: spin 18s linear infinite;
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Goldtown Library | Library Management System</title>
+<style>
+:root{--navy:#142d4e;--navy2:#1d416b;--blue:#2f6fed;--ink:#1d2939;--muted:#667085;--line:#e7ebf1;--bg:#f5f7fb;--white:#fff;--teal:#0d9488;--amber:#b7791f;--red:#c2413b;--shadow:0 12px 32px rgba(22,40,70,.08)}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}button,input,select{font:inherit}button{cursor:pointer}.hidden{display:none!important}.muted{color:var(--muted)}.small{font-size:12px}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:800;color:#7790ad}.brand-mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#315f9b,#142d4e);display:grid;place-items:center;color:white;font-size:22px;box-shadow:0 8px 18px #142d4e2a}.brand{display:flex;align-items:center;gap:12px}.brand strong{display:block;font-size:15px;letter-spacing:.01em}.brand span{display:block;font-size:11px;color:#8da2bc;margin-top:3px}
+.login-screen{min-height:100vh;display:grid;grid-template-columns:minmax(320px,1.05fr) minmax(360px,.95fr);background:#fff}.login-hero{background:radial-gradient(circle at 15% 10%,#416fa4 0,transparent 34%),linear-gradient(145deg,#102744,#1e4773);color:white;padding:54px clamp(28px,6vw,88px);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}.login-hero:after{content:"";position:absolute;width:440px;height:440px;border:1px solid #ffffff1c;border-radius:50%;right:-170px;bottom:-130px;box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff06}.hero-copy{max-width:530px;margin:auto 0;position:relative;z-index:1}.hero-copy h1{font-size:clamp(38px,4.6vw,62px);line-height:1.05;letter-spacing:-.045em;margin:18px 0}.hero-copy p{font-size:16px;line-height:1.75;color:#c7d7e9;max-width:450px}.hero-chip{display:inline-flex;gap:8px;align-items:center;border:1px solid #ffffff35;background:#ffffff0c;border-radius:999px;padding:9px 13px;font-size:12px;color:#e2ebf5}.hero-foot{font-size:12px;color:#9db2cb;position:relative;z-index:1}.login-side{display:flex;align-items:center;justify-content:center;padding:36px 24px}.login-card{width:min(440px,100%)}.login-card h2{font-size:29px;letter-spacing:-.03em;margin:0 0 8px}.login-card>p{margin:0 0 26px;color:var(--muted);font-size:14px;line-height:1.6}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:15px}.field label{font-size:12px;font-weight:700;color:#344054}.field input,.field select,.searchbox input{width:100%;border:1px solid #dce2eb;border-radius:10px;background:#fff;padding:12px 13px;outline:none;color:var(--ink)}.field input:focus,.field select:focus,.searchbox input:focus{border-color:#7aa3f7;box-shadow:0 0 0 3px #2f6fed14}.btn{border:0;border-radius:10px;padding:11px 15px;font-weight:750;font-size:13px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.15s}.btn-primary{background:var(--blue);color:#fff;box-shadow:0 5px 12px #2f6fed26}.btn-primary:hover{background:#245bd0;transform:translateY(-1px)}.btn-secondary{background:#eef3fa;color:#29476a}.btn-outline{background:#fff;color:#344054;border:1px solid var(--line)}.btn-danger{background:#fff0ef;color:#b42318}.btn-sm{padding:7px 10px;font-size:12px;border-radius:8px}.full{width:100%}.demo-box{margin-top:20px;border:1px solid #e5eaf2;background:#f8faff;padding:14px;border-radius:12px}.demo-box strong{font-size:12px}.demo-accounts{display:grid;gap:7px;margin-top:10px}.demo-account{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid #e7ecf3;padding:9px 10px;border-radius:9px;font-size:12px}.demo-account button{border:0;background:#eaf1ff;color:#2458b5;border-radius:7px;padding:6px 8px;font-size:11px;font-weight:800}.login-error{font-size:12px;color:var(--red);margin-top:10px;min-height:16px}
+.app{min-height:100vh;display:grid;grid-template-columns:248px minmax(0,1fr)}.sidebar{background:var(--navy);color:white;padding:24px 15px;display:flex;flex-direction:column;min-height:100vh}.sidebar .brand{padding:0 9px 28px}.sidebar .brand-mark{background:#ffffff18;box-shadow:none}.sidebar .brand span{color:#a9bfd9}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:#829bb9;padding:13px 12px 8px;font-weight:800}.nav-list{display:grid;gap:5px}.nav-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border:0;background:transparent;color:#bdcce0;border-radius:9px;text-align:left;font-size:13px;font-weight:650;width:100%}.nav-item .ico{width:19px;text-align:center;font-size:16px}.nav-item:hover{background:#ffffff0c;color:white}.nav-item.active{background:#ffffff17;color:#fff;box-shadow:inset 3px 0 #77a7ff}.side-bottom{margin-top:auto;border-top:1px solid #ffffff20;padding:17px 8px 0}.user-mini{display:flex;align-items:center;gap:10px;margin-bottom:15px}.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#dce9ff;color:#244f8d;font-weight:850;font-size:12px;flex-shrink:0}.user-mini strong{display:block;font-size:12px}.user-mini span{font-size:11px;color:#9eb4ce}.side-bottom .btn{width:100%}
+.main{min-width:0}.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,3vw,38px);gap:16px}.breadcrumb{font-size:12px;color:var(--muted)}.breadcrumb strong{color:var(--ink)}.top-right{display:flex;align-items:center;gap:13px}.date-label{font-size:12px;color:var(--muted)}.content{padding:30px clamp(18px,3vw,38px) 44px;max-width:1600px;margin:auto}.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:25px}.page-head h1{font-size:27px;letter-spacing:-.035em;margin:0 0 7px}.page-head p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}.head-actions{display:flex;gap:9px;flex-wrap:wrap}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:22px}.stat-card,.panel{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 3px 10px #1c355508}.stat-card{padding:19px;position:relative;overflow:hidden}.stat-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:12px;font-weight:650}.stat-icon{width:35px;height:35px;display:grid;place-items:center;border-radius:10px;background:#edf3ff;color:#3267ca;font-size:17px}.stat-value{font-size:29px;font-weight:850;letter-spacing:-.04em;margin:14px 0 5px}.stat-note{font-size:11px;color:var(--muted)}.stat-note em{font-style:normal;color:var(--teal);font-weight:800}.panel{padding:20px;margin-bottom:20px;min-width:0}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}.panel-head h2{font-size:15px;margin:0;letter-spacing:-.01em}.panel-head p{font-size:12px;color:var(--muted);margin:5px 0 0}.search-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.searchbox{position:relative;min-width:220px;flex:1}.searchbox input{padding-left:37px}.searchbox span{position:absolute;left:13px;top:10px;color:#8492a6}.filter-select{padding:10px 12px;border:1px solid #dce2eb;border-radius:9px;background:#fff;font-size:12px;color:#475467}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th{text-align:left;background:#f8fafc;color:#778398;font-size:10px;text-transform:uppercase;letter-spacing:.07em;padding:12px 13px;border-bottom:1px solid var(--line)}td{padding:13px;border-bottom:1px solid #edf0f5;font-size:12px;color:#344054}tbody tr:last-child td{border-bottom:0}tbody tr:hover{background:#fafcff}.book-title{display:flex;align-items:center;gap:10px}.book-cover{width:34px;height:43px;border-radius:5px;background:linear-gradient(145deg,#3f6a9f,#1b385d);color:#fff;display:grid;place-items:center;font-size:13px;box-shadow:inset -4px 0 #ffffff18;flex-shrink:0}.book-cover.gold{background:linear-gradient(145deg,#d3a24f,#9a6c24)}.book-cover.green{background:linear-gradient(145deg,#49a59b,#17675f)}.book-cover.plum{background:linear-gradient(145deg,#9c79b5,#5b3b78)}.book-cover.red{background:linear-gradient(145deg,#c86a62,#823d3a)}.book-title strong{display:block;font-size:12px;color:#24344d;max-width:280px;overflow:hidden;text-overflow:ellipsis}.book-title span{display:block;font-size:11px;color:var(--muted);margin-top:4px}.pill{display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:999px;font-size:10px;font-weight:800}.pill:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}.available,.returned{background:#e8f7ef;color:#16804a}.borrowed{background:#eaf1ff;color:#2d5eb3}.unavailable,.overdue{background:#fff0ef;color:#b42318}.pending{background:#fff6e5;color:#a66a10}.two-col{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.85fr);gap:20px}.activity-list{display:grid}.activity{display:flex;align-items:flex-start;gap:11px;padding:12px 0;border-bottom:1px solid #eef1f5}.activity:last-child{border-bottom:0}.activity-dot{width:32px;height:32px;border-radius:10px;background:#eef4ff;display:grid;place-items:center;color:#3568c6;flex-shrink:0}.activity strong{display:block;font-size:12px;margin-bottom:4px}.activity p{font-size:11px;color:var(--muted);margin:0;line-height:1.5}.activity time{font-size:10px;color:#98a2b3;margin-left:auto;white-space:nowrap}.quick-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.quick-action{border:1px solid var(--line);border-radius:11px;padding:15px;background:#fff;text-align:left;transition:.15s}.quick-action:hover{border-color:#a8c1f4;background:#f8faff;transform:translateY(-1px)}.quick-action .q-icon{width:34px;height:34px;background:#edf3ff;color:#2f62c2;border-radius:10px;display:grid;place-items:center;margin-bottom:10px;font-size:16px}.quick-action strong{display:block;font-size:12px;margin-bottom:5px}.quick-action span{font-size:11px;color:var(--muted);line-height:1.4}.book-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.book-card{border:1px solid var(--line);border-radius:12px;padding:15px;display:flex;gap:13px;min-width:0}.book-card .book-cover{width:48px;height:63px;font-size:18px}.book-card-info{min-width:0;flex:1}.book-card h3{font-size:12px;line-height:1.45;margin:0 0 5px}.book-card p{font-size:11px;color:var(--muted);margin:0 0 10px}.book-card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}.empty{text-align:center;padding:35px 10px;color:var(--muted);font-size:13px}.notice{padding:12px 14px;border-radius:10px;background:#f0f6ff;color:#31598e;font-size:12px;line-height:1.6;margin-bottom:18px;border:1px solid #dce9ff}.notice strong{color:#1d416b}.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.bar-list{display:grid;gap:15px}.bar-row{display:grid;grid-template-columns:115px 1fr 32px;align-items:center;gap:10px;font-size:11px;color:#667085}.bar-track{height:8px;border-radius:999px;background:#edf1f7;overflow:hidden}.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#2f6fed,#6b9cff)}.progress-summary{display:flex;align-items:center;gap:18px}.donut{width:112px;height:112px;border-radius:50%;background:conic-gradient(#2f6fed 0 56%,#13a58e 56% 84%,#f3bd56 84% 100%);display:grid;place-items:center;flex-shrink:0}.donut:before{content:"";width:76px;height:76px;border-radius:50%;background:#fff}.legend{display:grid;gap:10px;font-size:11px;color:#667085}.legend span{display:flex;align-items:center;gap:8px}.legend i{width:8px;height:8px;border-radius:3px;display:inline-block}.modal-backdrop{position:fixed;inset:0;background:#0e203c80;display:grid;place-items:center;padding:18px;z-index:20}.modal{width:min(480px,100%);background:#fff;border-radius:16px;box-shadow:0 25px 80px #0c1d3b3b;overflow:hidden}.modal-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.modal-head h2{margin:0;font-size:17px}.close{border:0;background:#f1f4f8;border-radius:8px;width:30px;height:30px;font-size:18px;color:#667085}.modal-body{padding:22px}.modal-actions{display:flex;justify-content:flex-end;gap:9px;padding-top:7px}.toast{position:fixed;right:22px;bottom:22px;background:#163a2c;color:white;padding:13px 17px;border-radius:11px;box-shadow:var(--shadow);font-size:13px;z-index:30;max-width:min(380px,calc(100vw - 44px));animation:slide .2s ease}.toast.error{background:#8e2c2c}@keyframes slide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.mobile-menu{display:none}.footer-note{text-align:center;color:#98a2b3;font-size:10px;margin-top:22px}
+@media(max-width:1100px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.book-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.two-col{grid-template-columns:1fr}.report-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.login-screen{grid-template-columns:1fr}.login-hero{display:none}.login-side{min-height:100vh;padding:24px}.app{grid-template-columns:1fr}.sidebar{position:fixed;z-index:15;left:-260px;top:0;width:248px;transition:left .2s;box-shadow:12px 0 30px #0d24423a}.sidebar.open{left:0}.mobile-menu{display:inline-flex}.topbar{height:65px;padding:0 16px}.date-label{display:none}.content{padding:22px 15px 35px}.page-head{flex-direction:column}.page-head h1{font-size:24px}.stats{gap:10px}.stat-card{padding:14px}.stat-value{font-size:25px}.panel{padding:15px}.book-grid{grid-template-columns:1fr}.quick-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.searchbox{min-width:100%}.search-tools{width:100%}.search-tools .filter-select{flex:1}.report-grid{gap:12px}}
+</style>
 </head>
 <body>
-  <main>
-    <h1>About Us</h1>
-
-    <div class="profiles">
-      <!-- You -->
-      <a class="card" href="reuben-acaac.html">
-        <div class="avatar">
-          <div class="frame">
-            <img src="reuben-acaac.jpg" alt="Reuben James Acaac" />
-          </div>
-        </div>
-        <h2>Reuben James Acaac</h2>
-        <p>Developer • ICT Student</p>
-      </a>
-
-      <a class="card" href="jachary-lago.html">
-        <div class="avatar">
-          <div class="frame">
-            <img src="jachary-lago.jpg" alt="Jachary Lago Flores" />
-          </div>
-        </div>
-        <h2>Jachary Lago Flores</h2>
-        <p>Human • ICT Student</p>
-      </a>
+<div id="loginScreen" class="login-screen">
+  <section class="login-hero">
+    <div class="brand"><div class="brand-mark">▤</div><div><strong>GOLDTOWN LIBRARY</strong><span>LIBRARY MANAGEMENT SYSTEM</span></div></div>
+    <div class="hero-copy">
+      <span class="hero-chip">✦ &nbsp; CAMPUS KNOWLEDGE, ONE PLACE</span>
+      <h1>Your next great read starts here.</h1>
+      <p>A simpler way to discover books, manage borrowing, and keep your school library organized.</p>
+      <div style="display:flex;gap:24px;margin-top:32px;flex-wrap:wrap">
+        <div><div style="font-size:26px;font-weight:850">1,248</div><div style="font-size:11px;color:#a9bfd9;margin-top:4px">Catalog titles*</div></div>
+        <div><div style="font-size:26px;font-weight:850">386</div><div style="font-size:11px;color:#a9bfd9;margin-top:4px">Library members*</div></div>
+        <div><div style="font-size:26px;font-weight:850">Open</div><div style="font-size:11px;color:#a9bfd9;margin-top:4px">Learning for everyone</div></div>
+      </div>
     </div>
+    <div class="hero-foot">*Illustrative figures for the proposal demo · GOLDTOWN BOYZ — Group 7</div>
+  </section>
+  <section class="login-side">
+    <div class="login-card">
+      <div class="brand" style="margin-bottom:34px"><div class="brand-mark">▤</div><div><strong>Goldtown Library</strong><span style="color:#667085">Digital Library Portal</span></div></div>
+      <div class="eyebrow" style="margin-bottom:10px">WELCOME BACK</div>
+      <h2>Sign in to your account</h2>
+      <p>Choose your account type, then enter your demo credentials to continue.</p>
+      <form id="loginForm">
+        <div class="field"><label for="loginRole">Account type</label><select id="loginRole"><option value="Student">Student</option><option value="Librarian">Librarian</option><option value="Teacher/Admin">Teacher / Admin</option></select></div>
+        <div class="field"><label for="loginId">Username or ID</label><input id="loginId" autocomplete="username" placeholder="Enter your username or ID" required /></div>
+        <div class="field"><label for="loginPassword">Password</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required /></div>
+        <button class="btn btn-primary full" type="submit" style="margin-top:5px;padding:13px">Sign in securely <span>→</span></button>
+        <div id="loginError" class="login-error" role="status"></div>
+      </form>
+      <div class="demo-box">
+        <strong>DEMO ACCESS <span style="font-weight:500;color:#667085">· Click an account to fill the form</span></strong>
+        <div class="demo-accounts">
+          <div class="demo-account"><span><b>Student</b><br><span class="muted">S001 / student123</span></span><button data-demo="Student">Use account</button></div>
+          <div class="demo-account"><span><b>Librarian</b><br><span class="muted">LIB001 / library123</span></span><button data-demo="Librarian">Use account</button></div>
+          <div class="demo-account"><span><b>Teacher / Admin</b><br><span class="muted">ADM001 / admin123</span></span><button data-demo="Teacher/Admin">Use account</button></div>
+        </div>
+      </div>
+      <div class="small muted" style="margin-top:16px;text-align:center">Prototype only · Uses sample data in this browser</div>
+    </div>
+  </section>
+</div>
+
+<div id="app" class="app hidden">
+  <aside id="sidebar" class="sidebar">
+    <div class="brand"><div class="brand-mark">▤</div><div><strong>GOLDTOWN LIBRARY</strong><span>MANAGEMENT PORTAL</span></div></div>
+    <div class="nav-label">Workspace</div><nav id="navList" class="nav-list"></nav>
+    <div class="side-bottom">
+      <div class="user-mini"><div id="sideAvatar" class="avatar">RA</div><div><strong id="sideName">Reuben Acaac</strong><span id="sideRole">Student account</span></div></div>
+      <button id="logoutBtn" class="btn btn-secondary"><span>↪</span> Sign out</button>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <div style="display:flex;align-items:center;gap:12px"><button id="mobileMenu" class="btn btn-outline mobile-menu">☰</button><div class="breadcrumb">Goldtown Library <span style="padding:0 7px;color:#b4bfce">/</span><strong id="crumb">Overview</strong></div></div>
+      <div class="top-right"><span class="date-label" id="todayLabel"></span><div id="topAvatar" class="avatar">RA</div></div>
+    </header>
+    <div id="pageContent" class="content"></div>
   </main>
+</div>
+<div id="modalRoot"></div><div id="toastRoot"></div>
+<script>
+const demoUsers=[
+ {id:"S001",password:"student123",role:"Student",name:"Reuben Acaac",email:"reuben.acaac@demo.edu"},
+ {id:"LIB001",password:"library123",role:"Librarian",name:"Clarinz Bartolome",email:"library@demo.edu"},
+ {id:"ADM001",password:"admin123",role:"Teacher/Admin",name:"Ms. Amelia Myers",email:"admin@demo.edu"}
+];
+const initialBooks=[
+ {id:"B001",title:"Noli Me Tangere",author:"Jose Rizal",category:"Literature",year:1887,total:4,available:3,shelf:"LIT-A01"},
+ {id:"B002",title:"Introduction to Computing",author:"Behrouz A. Forouzan",category:"Technology",year:2022,total:5,available:2,shelf:"ICT-B04"},
+ {id:"B003",title:"El Filibusterismo",author:"Jose Rizal",category:"Literature",year:1891,total:4,available:4,shelf:"LIT-A02"},
+ {id:"B004",title:"Python Programming: An Introduction",author:"John Zelle",category:"Technology",year:2017,total:6,available:5,shelf:"ICT-B02"},
+ {id:"B005",title:"General Psychology",author:"Ciccarelli & White",category:"Psychology",year:2021,total:3,available:0,shelf:"PSY-C01"},
+ {id:"B006",title:"Mathematics in the Modern World",author:"Charles R. Darwin",category:"Mathematics",year:2020,total:5,available:3,shelf:"MTH-D01"},
+ {id:"B007",title:"The Little Prince",author:"Antoine de Saint-Exupery",category:"Fiction",year:1943,total:3,available:2,shelf:"FIC-E03"},
+ {id:"B008",title:"Clean Code",author:"Robert C. Martin",category:"Technology",year:2008,total:2,available:1,shelf:"ICT-B07"},
+ {id:"B009",title:"Atomic Habits",author:"James Clear",category:"Personal Development",year:2018,total:4,available:4,shelf:"DEV-F01"},
+ {id:"B010",title:"Florante at Laura",author:"Francisco Balagtas",category:"Literature",year:1838,total:3,available:1,shelf:"LIT-A04"},
+ {id:"B011",title:"Database System Concepts",author:"Abraham Silberschatz",category:"Technology",year:2019,total:3,available:2,shelf:"ICT-B09"},
+ {id:"B012",title:"To Kill a Mockingbird",author:"Harper Lee",category:"Fiction",year:1960,total:2,available:2,shelf:"FIC-E01"}
+];
+const initialStudents=[
+ {id:"S001",name:"Reuben Acaac",course:"BSIT",year:"1st Year",email:"reuben.acaac@demo.edu"},
+ {id:"S002",name:"Maria Santos",course:"BSIT",year:"1st Year",email:"maria.santos@demo.edu"},
+ {id:"S003",name:"John Dela Cruz",course:"BSIT",year:"2nd Year",email:"john.delacruz@demo.edu"},
+ {id:"S004",name:"Angela Reyes",course:"BS Psychology",year:"1st Year",email:"angela.reyes@demo.edu"},
+ {id:"S005",name:"Mark Villanueva",course:"BSIT",year:"3rd Year",email:"mark.v@demo.edu"}
+];
+function daysFromNow(days){let d=new Date();d.setDate(d.getDate()+days);return d.toISOString().slice(0,10)}
+const initialTransactions=[
+ {id:"TXN-1005",studentId:"S002",bookId:"B004",borrowDate:daysFromNow(-2),dueDate:daysFromNow(12),returnDate:"",status:"Borrowed"},
+ {id:"TXN-1004",studentId:"S003",bookId:"B005",borrowDate:daysFromNow(-12),dueDate:daysFromNow(-2),returnDate:"",status:"Overdue"},
+ {id:"TXN-1003",studentId:"S001",bookId:"B002",borrowDate:daysFromNow(-4),dueDate:daysFromNow(10),returnDate:"",status:"Borrowed"},
+ {id:"TXN-1002",studentId:"S004",bookId:"B001",borrowDate:daysFromNow(-18),dueDate:daysFromNow(-4),returnDate:daysFromNow(-5),status:"Returned"},
+ {id:"TXN-1001",studentId:"S001",bookId:"B007",borrowDate:daysFromNow(-1),dueDate:daysFromNow(13),returnDate:"",status:"Borrowed"},
+ {id:"TXN-1000",studentId:"S005",bookId:"B010",borrowDate:daysFromNow(-9),dueDate:daysFromNow(5),returnDate:"",status:"Borrowed"},
+ {id:"TXN-0999",studentId:"S002",bookId:"B003",borrowDate:daysFromNow(-25),dueDate:daysFromNow(-11),returnDate:daysFromNow(-12),status:"Returned"}
+];
+let books,students,transactions,currentUser=null,currentPage="overview",bookSearch="",bookCategory="All categories",txSearch="";
+function loadData(){try{books=JSON.parse(localStorage.getItem("gt_books"))||structuredClone(initialBooks);students=JSON.parse(localStorage.getItem("gt_students"))||structuredClone(initialStudents);transactions=JSON.parse(localStorage.getItem("gt_transactions"))||structuredClone(initialTransactions)}catch(e){books=structuredClone(initialBooks);students=structuredClone(initialStudents);transactions=structuredClone(initialTransactions)}}
+function saveData(){localStorage.setItem("gt_books",JSON.stringify(books));localStorage.setItem("gt_students",JSON.stringify(students));localStorage.setItem("gt_transactions",JSON.stringify(transactions))}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function fmtDate(s){if(!s)return "—";return new Date(s+"T12:00:00").toLocaleDateString("en-PH",{month:"short",day:"numeric",year:"numeric"})}
+function getBook(id){return books.find(b=>b.id===id)||{title:"Unknown book",author:"—",id}}
+function getStudent(id){return students.find(s=>s.id===id)||{name:"Unknown student",id}}
+function initials(name){return name.split(/\s+/).slice(0,2).map(x=>x[0]).join("").toUpperCase()}
+function activeTransactions(){return transactions.filter(t=>t.status==="Borrowed"||t.status==="Overdue")}
+function getLiveStatus(t){if(t.status==="Returned")return"Returned";return t.dueDate<daysFromNow(0)?"Overdue":"Borrowed"}
+function pill(status){let cls=status.toLowerCase().replace(/[^a-z]/g,"");return `<span class="pill ${cls}">${esc(status)}</span>`}
+function bookCover(i){return ["","gold","green","plum","red"][i%5]}
+function bookRow(b){let idx=books.indexOf(b),status=b.available>0?"Available":"Unavailable";return `<tr><td><div class="book-title"><div class="book-cover ${bookCover(idx)}">▤</div><div><strong>${esc(b.title)}</strong><span>${esc(b.id)} · ${esc(b.shelf)}</span></div></div></td><td>${esc(b.author)}</td><td>${esc(b.category)}</td><td>${b.available} / ${b.total}</td><td>${pill(status)}</td><td>${currentUser.role==="Librarian"?`<button class="btn btn-outline btn-sm" onclick="editBook('${b.id}')">Edit</button>`:"<span class='muted'>Catalog</span>"}</td></tr>`}
+function transactionRow(t,withActions=false){let b=getBook(t.bookId),s=getStudent(t.studentId),status=getLiveStatus(t);return `<tr><td><strong>${esc(t.id)}</strong></td><td><div class="book-title"><div><strong>${esc(b.title)}</strong><span>${esc(b.id)}</span></div></div></td><td>${esc(s.name)}<div class="small muted">${esc(s.id)}</div></td><td>${fmtDate(t.borrowDate)}</td><td>${fmtDate(t.dueDate)}</td><td>${pill(status)}</td><td>${withActions&&status!=="Returned"?`<button class="btn btn-outline btn-sm" onclick="returnBook('${t.id}')">Mark returned</button>`:"—"}</td></tr>`}
+const navConfig={
+ "Student":[["overview","⌂","Overview"],["catalog","⌕","Search books"],["mybooks","▤","My borrowed books"]],
+ "Librarian":[["overview","⌂","Overview"],["catalog","▤","Book inventory"],["transactions","↔","Transactions"],["students","♙","Register students"]],
+ "Teacher/Admin":[["overview","⌂","Overview"],["reports","▥","Search & reports"],["catalog","▤","Available books"],["transactions","↔","Borrowing records"]]
+};
+function startLogin(user){currentUser=user;currentPage="overview";document.getElementById("loginScreen").classList.add("hidden");document.getElementById("app").classList.remove("hidden");document.getElementById("sideName").textContent=user.name;document.getElementById("sideRole").textContent=user.role+" account";document.getElementById("sideAvatar").textContent=initials(user.name);document.getElementById("topAvatar").textContent=initials(user.name);document.getElementById("todayLabel").textContent=new Date().toLocaleDateString("en-PH",{weekday:"short",month:"short",day:"numeric",year:"numeric"});renderNav();renderPage()}
+function renderNav(){document.getElementById("navList").innerHTML=navConfig[currentUser.role].map(([id,icon,label])=>`<button class="nav-item ${currentPage===id?"active":""}" onclick="goPage('${id}')"><span class="ico">${icon}</span>${label}</button>`).join("")}
+function goPage(page){currentPage=page;document.getElementById("sidebar").classList.remove("open");renderNav();renderPage()}
+function pageHead(title,desc,actions=""){return `<div class="page-head"><div><div class="eyebrow" style="margin-bottom:8px">${esc(currentUser.role)} WORKSPACE</div><h1>${title}</h1><p>${desc}</p></div><div class="head-actions">${actions}</div></div>`}
+function stat(label,value,note,icon){return `<div class="stat-card"><div class="stat-top"><span>${label}</span><span class="stat-icon">${icon}</span></div><div class="stat-value">${value}</div><div class="stat-note">${note}</div></div>`}
+function panelHead(title,desc="",action=""){return `<div class="panel-head"><div><h2>${title}</h2>${desc?`<p>${desc}</p>`:""}</div>${action}</div>`}
+function bookTable(list,actions=false){if(!list.length)return `<div class="empty">No books match your search.</div>`;return `<div class="table-wrap"><table><thead><tr><th>Book details</th><th>Author</th><th>Category</th><th>Copies</th><th>Availability</th><th>Action</th></tr></thead><tbody>${list.map(b=>bookRow(b)).join("")}</tbody></table></div>`}
+function txTable(list,actions=false){if(!list.length)return `<div class="empty">No transactions found.</div>`;return `<div class="table-wrap"><table><thead><tr><th>Transaction</th><th>Book</th><th>Borrower</th><th>Borrow date</th><th>Due date</th><th>Status</th><th>Action</th></tr></thead><tbody>${list.map(t=>transactionRow(t,actions)).join("")}</tbody></table></div>`}
+function activityPanel(){let items=transactions.slice(0,5);return `<section class="panel">${panelHead("Recent library activity","Latest demo transactions")}<div class="activity-list">${items.map(t=>{let b=getBook(t.bookId),s=getStudent(t.studentId),status=getLiveStatus(t);return `<div class="activity"><div class="activity-dot">${status==="Returned"?"✓":"↗"}</div><div style="flex:1"><strong>${esc(s.name)} · ${esc(status==="Returned"?"returned":"borrowed")} a book</strong><p>${esc(b.title)} · ${esc(t.id)}</p></div><time>${fmtDate(t.borrowDate)}</time></div>`}).join("")}</div></section>`}
+function quickPanel(){let actions=currentUser.role==="Student"?[["⌕","Search the catalog","Find a title or author","catalog"],["▤","My borrowed books","Check due dates and returns","mybooks"]]:currentUser.role==="Librarian"?[["＋","Add a new book","Update the library inventory","addbook"],["♙","Register student","Add a library member","addstudent"],["↔","View transactions","Monitor borrow and return activity","transactions"],["▤","Book inventory","Review all library books","catalog"]]:[["▥","Open reports","Review borrowing statistics","reports"],["▤","Available books","Browse the library catalog","catalog"],["↔","Borrowing records","Review current and past loans","transactions"]];return `<section class="panel">${panelHead("Quick actions","Jump to a common task")}<div class="quick-grid">${actions.map(a=>`<button class="quick-action" onclick="${a[3].startsWith("add")?`openModal('${a[3]}')`:`goPage('${a[3]}')`}"><div class="q-icon">${a[0]}</div><strong>${a[1]}</strong><span>${a[2]}</span></button>`).join("")}</div></section>`}
+function renderStudentOverview(){let mine=transactions.filter(t=>t.studentId===currentUser.id),active=mine.filter(t=>getLiveStatus(t)!=="Returned"),due=active.filter(t=>getLiveStatus(t)==="Overdue").length;return `${pageHead(`Good day, ${esc(currentUser.name.split(" ")[0])} 👋`,"Here’s what’s happening with your library account today.",`<button class="btn btn-primary" onclick="goPage('catalog')">⌕ Find a book</button>`)}<div class="notice"><strong>Welcome to Goldtown Library.</strong> Search the catalog, check real-time demo availability, and borrow books using your registered student ID.</div><div class="stats">${stat("Books in catalog",books.length,"Titles listed in demo","▤")}${stat("Currently borrowed",active.length,"Your active loans","↗")}${stat("Overdue books",due,due?"Please return or contact the library":"You’re all caught up","◷")}${stat("Returned books",mine.filter(t=>getLiveStatus(t)==="Returned").length,"Completed transactions","✓")}</div><div class="two-col"><section class="panel">${panelHead("Recommended for you","A few titles from the library catalog",`<button class="btn btn-outline btn-sm" onclick="goPage('catalog')">View catalog →</button>`)}<div class="book-grid">${books.filter(b=>b.available>0).slice(0,4).map((b,i)=>`<div class="book-card"><div class="book-cover ${bookCover(i)}">▤</div><div class="book-card-info"><h3>${esc(b.title)}</h3><p>${esc(b.author)}</p><div class="book-card-foot">${pill("Available")}<button class="btn btn-primary btn-sm" onclick="borrowBook('${b.id}')">Borrow</button></div></div></div>`).join("")}</div></section><div>${quickPanel()}</div></div><section class="panel">${panelHead("Your recent borrowing","Latest activity on your student account",`<button class="btn btn-outline btn-sm" onclick="goPage('mybooks')">View all →</button>`)}${txTable(mine.slice(0,4))}</section>`}
+function renderLibrarianOverview(){let borrowed=activeTransactions().length,overdue=transactions.filter(t=>getLiveStatus(t)==="Overdue").length;return `${pageHead("Library overview","Manage your collection, members, and daily transactions.",`<button class="btn btn-outline" onclick="openModal('addstudent')">＋ Register student</button><button class="btn btn-primary" onclick="openModal('addbook')">＋ Add book</button>`)}<div class="stats">${stat("Total book titles",books.length,"Across all categories","▤")}${stat("Physical copies",books.reduce((n,b)=>n+b.total,0),"Total collection size","▥")}${stat("Active loans",borrowed,"Books not yet returned","↗")}${stat("Overdue loans",overdue,"Follow-up may be needed","◷")}</div><div class="two-col"><section class="panel">${panelHead("Inventory snapshot","Books with the fewest copies available",`<button class="btn btn-outline btn-sm" onclick="goPage('catalog')">Full inventory →</button>`)}${bookTable([...books].sort((a,b)=>a.available-b.available).slice(0,5))}</section><div>${quickPanel()}${activityPanel()}</div></div>`}
+function renderAdminOverview(){let borrowed=activeTransactions().length,returned=transactions.filter(t=>getLiveStatus(t)==="Returned").length;return `${pageHead("Library analytics","A quick overview of inventory and borrowing activity.",`<button class="btn btn-outline" onclick="goPage('transactions')">View records</button><button class="btn btn-primary" onclick="goPage('reports')">View reports →</button>`)}<div class="stats">${stat("Book titles",books.length,"Catalog records","▤")}${stat("Available copies",books.reduce((n,b)=>n+b.available,0),"Ready to borrow","✓")}${stat("Active loans",borrowed,"Borrowed or overdue","↗")}${stat("Registered students",students.length,"Library members","♙")}</div><div class="two-col"><section class="panel">${panelHead("Borrowing status","Distribution of demo transactions")}<div class="progress-summary"><div class="donut"></div><div class="legend"><span><i style="background:#2f6fed"></i> Active loans: ${borrowed}</span><span><i style="background:#13a58e"></i> Returned: ${returned}</span><span><i style="background:#f3bd56"></i> Overdue: ${transactions.filter(t=>getLiveStatus(t)==="Overdue").length}</span></div></div><p class="small muted" style="margin:17px 0 0">Figures are calculated from the sample transaction records shown in this prototype.</p></section><div>${quickPanel()}</div></div>${activityPanel()}`}
+function renderCatalog(){let isStudent=currentUser.role==="Student",isAdmin=currentUser.role==="Teacher/Admin";let list=books.filter(b=>(!isAdmin||b.available>0)&&((b.title+" "+b.author+" "+b.id+" "+b.category).toLowerCase().includes(bookSearch.toLowerCase()))&&(bookCategory==="All categories"||b.category===bookCategory));return `${pageHead(isStudent?"Search the catalog":currentUser.role==="Librarian"?"Book inventory":"Available books",isStudent?"Search by title, author, or category and borrow available books.":isAdmin?"Browse the current collection and check copy availability.":"View and update the books in your library collection.",currentUser.role==="Librarian"?`<button class="btn btn-primary" onclick="openModal('addbook')">＋ Add new book</button>`:"")}<section class="panel">${panelHead("Library catalog",`${list.length} matching titles`)}<div class="search-tools" style="margin-bottom:18px"><div class="searchbox"><span>⌕</span><input id="bookSearch" placeholder="Search title, author, ID..." value="${esc(bookSearch)}" oninput="bookSearch=this.value;refreshCatalogTable()"></div><select id="categoryFilter" class="filter-select" onchange="bookCategory=this.value;refreshCatalogTable()"><option>All categories</option>${[...new Set(books.map(b=>b.category))].map(c=>`<option ${bookCategory===c?"selected":""}>${esc(c)}</option>`).join("")}</select></div><div id="catalogTable">${bookTable(list)}</div></section><div class="footer-note">Availability changes when a demo borrowing or return transaction is recorded.</div>`}
+function refreshCatalogTable(){let list=books.filter(b=>(currentUser.role!=="Teacher/Admin"||b.available>0)&&((b.title+" "+b.author+" "+b.id+" "+b.category).toLowerCase().includes(bookSearch.toLowerCase()))&&(bookCategory==="All categories"||b.category===bookCategory));document.getElementById("catalogTable").innerHTML=bookTable(list);let head=document.querySelector(".panel-head p");if(head)head.textContent=`${list.length} matching titles`}
+function renderMyBooks(){let mine=transactions.filter(t=>t.studentId===currentUser.id);return `${pageHead("My borrowed books","Keep track of your current loans, due dates, and return history.",`<button class="btn btn-primary" onclick="goPage('catalog')">＋ Borrow a book</button>`)}<div class="stats">${stat("Active loans",mine.filter(t=>getLiveStatus(t)==="Borrowed").length,"Books currently with you","↗")}${stat("Overdue",mine.filter(t=>getLiveStatus(t)==="Overdue").length,"Please return as soon as possible","◷")}${stat("Returned",mine.filter(t=>getLiveStatus(t)==="Returned").length,"Completed loans","✓")}${stat("Total transactions",mine.length,"Your library activity","▤")}</div><section class="panel">${panelHead("Borrowing history","Your active and completed transactions")}${txTable(mine,true)}</section>`}
+function renderTransactions(){let isLib=currentUser.role==="Librarian";let list=transactions.filter(t=>{let b=getBook(t.bookId),s=getStudent(t.studentId);return (t.id+" "+b.title+" "+s.name+" "+s.id).toLowerCase().includes(txSearch.toLowerCase())});return `${pageHead(isLib?"Transaction management":"Borrowing records",isLib?"Monitor all borrow and return activity, and update transaction status.":"Review the library’s borrowing records and transaction statuses.",`<button class="btn btn-outline" onclick="exportTransactions()">↓ Export CSV</button>`)}<div class="stats">${stat("All transactions",transactions.length,"Borrow and return records","↔")}${stat("Borrowed",transactions.filter(t=>getLiveStatus(t)==="Borrowed").length,"Currently active","↗")}${stat("Overdue",transactions.filter(t=>getLiveStatus(t)==="Overdue").length,"Past due date","◷")}${stat("Returned",transactions.filter(t=>getLiveStatus(t)==="Returned").length,"Completed records","✓")}</div><section class="panel">${panelHead("All transactions","Search by transaction ID, student, or book")}<div class="search-tools" style="margin-bottom:17px"><div class="searchbox"><span>⌕</span><input placeholder="Search transactions..." value="${esc(txSearch)}" oninput="txSearch=this.value;refreshTxTable()"></div></div><div id="txTable">${txTable(list,isLib)}</div></section>`}
+function refreshTxTable(){let list=transactions.filter(t=>{let b=getBook(t.bookId),s=getStudent(t.studentId);return(t.id+" "+b.title+" "+s.name+" "+s.id).toLowerCase().includes(txSearch.toLowerCase())});document.getElementById("txTable").innerHTML=txTable(list,currentUser.role==="Librarian")}
+function renderStudents(){return `${pageHead("Student registration","Manage the sample student records eligible to borrow books.",`<button class="btn btn-primary" onclick="openModal('addstudent')">＋ Register student</button>`)}<div class="stats">${stat("Registered students",students.length,"Member records","♙")}${stat("BSIT students",students.filter(s=>s.course==="BSIT").length,"Across year levels","⌘")}${stat("Active borrowers",new Set(activeTransactions().map(t=>t.studentId)).size,"Students with current loans","↗")}${stat("Total active loans",activeTransactions().length,"Across all members","▤")}</div><section class="panel">${panelHead("Student directory","Student ID, program, and contact information")}<div class="table-wrap"><table><thead><tr><th>Student</th><th>Student ID</th><th>Program</th><th>Year level</th><th>Email</th><th>Active loans</th></tr></thead><tbody>${students.map(s=>`<tr><td><div class="book-title"><div class="avatar">${initials(s.name)}</div><div><strong>${esc(s.name)}</strong><span>Library member</span></div></div></td><td>${esc(s.id)}</td><td>${esc(s.course)}</td><td>${esc(s.year)}</td><td>${esc(s.email)}</td><td>${activeTransactions().filter(t=>t.studentId===s.id).length}</td></tr>`).join("")}</tbody></table></div></section>`}
+function renderReports(){let cats=[...new Set(books.map(b=>b.category))].map(c=>({name:c,count:books.filter(b=>b.category===c).length}));let max=Math.max(1,...cats.map(c=>c.count));return `${pageHead("Search & reports","A reporting snapshot of inventory and borrowing activity.",`<button class="btn btn-outline" onclick="exportBooks()">↓ Export inventory</button><button class="btn btn-primary" onclick="exportTransactions()">↓ Export transactions</button>`)}<div class="stats">${stat("Catalog titles",books.length,"Distinct book records","▤")}${stat("Total copies",books.reduce((n,b)=>n+b.total,0),"Including borrowed copies","▥")}${stat("Available copies",books.reduce((n,b)=>n+b.available,0),"Ready for borrowing","✓")}${stat("Borrowing records",transactions.length,"All transaction statuses","↔")}</div><div class="report-grid"><section class="panel">${panelHead("Inventory by category","Number of titles in each subject area")}<div class="bar-list">${cats.map(c=>`<div class="bar-row"><span>${esc(c.name)}</span><div class="bar-track"><div class="bar-fill" style="width:${c.count/max*100}%"></div></div><strong>${c.count}</strong></div>`).join("")}</div></section><section class="panel">${panelHead("Borrowing summary","Current status of recorded transactions")}<div class="bar-list">${[["Borrowed",transactions.filter(t=>getLiveStatus(t)==="Borrowed").length,"#2f6fed"],["Overdue",transactions.filter(t=>getLiveStatus(t)==="Overdue").length,"#d97706"],["Returned",transactions.filter(t=>getLiveStatus(t)==="Returned").length,"#15936f"]].map(([label,n,color])=>`<div class="bar-row" style="grid-template-columns:90px 1fr 32px"><span>${label}</span><div class="bar-track"><div class="bar-fill" style="width:${n/Math.max(1,transactions.length)*100}%;background:${color}"></div></div><strong>${n}</strong></div>`).join("")}</div><p class="small muted" style="margin-top:22px">Status is calculated from each transaction’s due date and return status.</p></section></div><section class="panel">${panelHead("Search results report","Use this report to locate a title, author, or category.")}<div class="search-tools" style="margin-bottom:17px"><div class="searchbox"><span>⌕</span><input id="reportSearch" placeholder="Enter title, author, or keyword..." oninput="renderReportSearch()"></div></div><div id="reportSearchResults">${bookTable(books)}</div></section><section class="panel">${panelHead("Borrowing summary","Latest borrowing and return records")}${txTable(transactions.slice().sort((a,b)=>b.borrowDate.localeCompare(a.borrowDate)))}</section>`}
+function renderReportSearch(){let q=document.getElementById("reportSearch").value.toLowerCase();document.getElementById("reportSearchResults").innerHTML=bookTable(books.filter(b=>(b.title+" "+b.author+" "+b.category+" "+b.id).toLowerCase().includes(q)))}
+function renderPage(){let c=document.getElementById("pageContent");if(!currentUser)return;let page=currentPage;if(currentUser.role==="Student"&&!["overview","catalog","mybooks"].includes(page))page="overview";if(currentUser.role==="Librarian"&&!["overview","catalog","transactions","students"].includes(page))page="overview";if(currentUser.role==="Teacher/Admin"&&!["overview","catalog","transactions","reports"].includes(page))page="overview";currentPage=page;renderNav();document.getElementById("crumb").textContent=({overview:"Overview",catalog:currentUser.role==="Student"?"Search books":currentUser.role==="Librarian"?"Book inventory":"Available books",mybooks:"My borrowed books",transactions:currentUser.role==="Librarian"?"Transactions":"Borrowing records",students:"Student registration",reports:"Search & reports"})[page]||"Overview";c.innerHTML=page==="overview"?(currentUser.role==="Student"?renderStudentOverview():currentUser.role==="Librarian"?renderLibrarianOverview():renderAdminOverview()):page==="catalog"?renderCatalog():page==="mybooks"?renderMyBooks():page==="transactions"?renderTransactions():page==="students"?renderStudents():renderReports()}
+function toast(msg,error=false){let root=document.getElementById("toastRoot");root.innerHTML=`<div class="toast ${error?"error":""}">${esc(msg)}</div>`;setTimeout(()=>{root.innerHTML=""},3000)}
+function borrowBook(bookId){if(currentUser.role!=="Student"){toast("Borrowing is available from a student account.",true);return}let book=books.find(b=>b.id===bookId);if(!book||book.available<1){toast("Sorry, no copies are currently available.",true);return}let existing=activeTransactions().find(t=>t.studentId===currentUser.id&&t.bookId===bookId);if(existing){toast("You already have an active loan for this title.",true);return}book.available--;transactions.unshift({id:"TXN-"+String(Date.now()).slice(-6),studentId:currentUser.id,bookId,borrowDate:daysFromNow(0),dueDate:daysFromNow(14),returnDate:"",status:"Borrowed"});saveData();renderPage();toast(`"${book.title}" has been borrowed. Due ${fmtDate(daysFromNow(14))}.`)}
+function returnBook(txId){let t=transactions.find(x=>x.id===txId);if(!t||getLiveStatus(t)==="Returned"){toast("This transaction is already closed.",true);return}if(currentUser.role==="Student"&&t.studentId!==currentUser.id){toast("You can only return books borrowed on your account.",true);return}t.status="Returned";t.returnDate=daysFromNow(0);let b=books.find(x=>x.id===t.bookId);if(b)b.available=Math.min(b.total,b.available+1);saveData();renderPage();toast("Book return recorded successfully.")}
+function openModal(type,bookId=null){let title=type==="addbook"?(bookId?"Edit book details":"Add a new book"):"Register a student";let b=bookId?books.find(x=>x.id===bookId):null;let body=type==="addbook"?`<form id="modalForm"><div class="field"><label>Book ID</label><input name="id" required value="${esc(b?.id||"")}" ${b?"readonly":""} placeholder="e.g. B013"></div><div class="field"><label>Book title</label><input name="title" required value="${esc(b?.title||"")}" placeholder="Enter full book title"></div><div class="field"><label>Author</label><input name="author" required value="${esc(b?.author||"")}" placeholder="Author's name"></div><div class="field"><label>Category</label><select name="category">${["Literature","Technology","Psychology","Mathematics","Fiction","Personal Development","Science","History","Other"].map(x=>`<option ${b?.category===x?"selected":""}>${x}</option>`).join("")}</select></div><div class="field"><label>Total copies</label><input name="total" type="number" min="1" required value="${b?.total??1}"></div><div class="field"><label>Shelf location</label><input name="shelf" required value="${esc(b?.shelf||"GEN-A01")}" placeholder="e.g. ICT-B01"></div><div class="modal-actions"><button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button><button class="btn btn-primary" type="submit">${b?"Save changes":"Add book"}</button></div></form>`:`<form id="modalForm"><div class="field"><label>Student ID</label><input name="id" required placeholder="e.g. S006"></div><div class="field"><label>Full name</label><input name="name" required placeholder="Student's full name"></div><div class="field"><label>Program / course</label><select name="course"><option>BSIT</option><option>BS Psychology</option><option>BS Education</option><option>BS Business Administration</option><option>BS Hospitality Management</option><option>Other</option></select></div><div class="field"><label>Year level</label><select name="year"><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option></select></div><div class="field"><label>Email address</label><input name="email" type="email" required placeholder="student@demo.edu"></div><div class="modal-actions"><button type="button" class="btn btn-outline" onclick="closeModal()">Cancel</button><button class="btn btn-primary" type="submit">Register student</button></div></form>`;document.getElementById("modalRoot").innerHTML=`<div class="modal-backdrop" onclick="if(event.target===this)closeModal()"><div class="modal"><div class="modal-head"><h2>${title}</h2><button class="close" onclick="closeModal()">×</button></div><div class="modal-body">${body}</div></div></div>`;document.getElementById("modalForm").addEventListener("submit",e=>{e.preventDefault();let f=new FormData(e.target),v=Object.fromEntries(f.entries());if(type==="addbook"){let total=Number(v.total);if(!b&&books.some(x=>x.id.toLowerCase()===v.id.trim().toLowerCase())){toast("That Book ID already exists.",true);return}if(b){let borrowed=b.total-b.available;b.title=v.title.trim();b.author=v.author.trim();b.category=v.category;b.total=total;b.available=Math.max(0,total-borrowed);b.shelf=v.shelf.trim()}else{books.push({id:v.id.trim().toUpperCase(),title:v.title.trim(),author:v.author.trim(),category:v.category,year:new Date().getFullYear(),total,available:total,shelf:v.shelf.trim()})}saveData();closeModal();renderPage();toast(b?"Book details updated.":"New book added to the catalog.")}else{if(students.some(x=>x.id.toLowerCase()===v.id.trim().toLowerCase())){toast("That student ID is already registered.",true);return}students.push({id:v.id.trim().toUpperCase(),name:v.name.trim(),course:v.course,year:v.year,email:v.email.trim()});saveData();closeModal();renderPage();toast("Student registered successfully.")}})}
+function closeModal(){document.getElementById("modalRoot").innerHTML=""}
+function editBook(id){openModal("addbook",id)}
+function csvDownload(filename,rows){let csv=rows.map(row=>row.map(v=>`"${String(v??"").replace(/"/g,'""')}"`).join(",")).join("\r\n");let blob=new Blob(["\ufeff"+csv],{type:"text/csv;charset=utf-8;"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=filename;a.click();URL.revokeObjectURL(url);toast("CSV report exported.")}
+function exportBooks(){csvDownload("goldtown-library-inventory.csv",[["Book ID","Title","Author","Category","Total Copies","Available Copies","Shelf"],...books.map(b=>[b.id,b.title,b.author,b.category,b.total,b.available,b.shelf])])}
+function exportTransactions(){csvDownload("goldtown-library-transactions.csv",[["Transaction ID","Student ID","Student Name","Book ID","Book Title","Borrow Date","Due Date","Return Date","Status"],...transactions.map(t=>[t.id,t.studentId,getStudent(t.studentId).name,t.bookId,getBook(t.bookId).title,t.borrowDate,t.dueDate,t.returnDate,getLiveStatus(t)])])}
+document.getElementById("loginForm").addEventListener("submit",e=>{e.preventDefault();let id=document.getElementById("loginId").value.trim().toLowerCase(),pw=document.getElementById("loginPassword").value,role=document.getElementById("loginRole").value;let user=demoUsers.find(u=>u.id.toLowerCase()===id&&u.password===pw&&u.role===role);if(!user){document.getElementById("loginError").textContent="Those credentials don't match this account type. Try one of the demo accounts below.";return}document.getElementById("loginError").textContent="";startLogin(user)});
+document.querySelectorAll("[data-demo]").forEach(btn=>btn.addEventListener("click",()=>{let u=demoUsers.find(x=>x.role===btn.dataset.demo);document.getElementById("loginRole").value=u.role;document.getElementById("loginId").value=u.id;document.getElementById("loginPassword").value=u.password;document.getElementById("loginError").textContent=""}));
+document.getElementById("logoutBtn").addEventListener("click",()=>{currentUser=null;document.getElementById("app").classList.add("hidden");document.getElementById("loginScreen").classList.remove("hidden");document.getElementById("sidebar").classList.remove("open");document.getElementById("loginPassword").value=""});
+document.getElementById("mobileMenu").addEventListener("click",()=>document.getElementById("sidebar").classList.toggle("open"));
+loadData();
+</script>
 </body>
 </html>
